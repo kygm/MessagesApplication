@@ -6,6 +6,7 @@
   <p>application and friends list</p>";
   echo "git test";
   //new test
+  //another
 
 ?>
 
