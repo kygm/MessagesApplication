@@ -1,5 +1,4 @@
 <?php
-  require('./dbconnect.php');
   require('./header.html');
 
   echo "<p>Under construction...</p>";
