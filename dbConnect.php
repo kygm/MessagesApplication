@@ -1,4 +1,6 @@
+
 <?php
+//this is the PDO db connection script (for git)
 /*
 if (!defined('PDO::ATTR_DRIVER_NAME')) {
 	echo 'PDO is unavailable<br/>';
