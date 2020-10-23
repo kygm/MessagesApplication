@@ -9,14 +9,7 @@
 //Kenny test
 //hey
   //newer test
-<<<<<<< HEAD
-
-=======
-//test
-//newtest
-
-//niggers
->>>>>>> 41127b2f0a6eabdedc1a4baff7e0df79af24d57e
+  //bitch
 ?>
 
 
