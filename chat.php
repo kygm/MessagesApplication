@@ -32,7 +32,7 @@ require('./dbconnect.php');
   </div>
 </div>';//chat input
 //function deterniming if its a file, add msg after file popup like discord?
-function file?{
+function fileQuery() {
   //after function (or in function?)
   //post msg to chat
   //im assuming youre holding the messages in the database and displaying them all in a scrolling window.
