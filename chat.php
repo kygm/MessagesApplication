@@ -25,9 +25,9 @@ require('./dbconnect.php');
     <label class="custom-file-label" for="inputGroupFile01">++</label>
   </div>
   <div class="chatInput">
-   '+// <input type="text" placeholder="message '+$recipient+'">
-  //</div>
-  '<div class="chatSend">
+    <input type="text" placeholder="message '+/*$recipient*/+'">
+  </div>
+  <div class="chatSend">
     <button type="button" class="btn btn-danger" action="file?">
   </div>
 </div>';//chat input
