@@ -17,7 +17,7 @@ require('./dbconnect.php');
   echo '
 <div class="input-group mb-3">
   <div class="custom-file">
-    <input type="file" class=" btn-secondary" id="inputGroupFile01" >
+    <button type="file" class=" btn-secondary" id="inputGroupFile01" >
     <label class="custom-file-label" for="inputGroupFile01">++</label>
   </div>
   <div class="chatInput">
