@@ -17,9 +17,18 @@ require('./dbconnect.php');
   
   //msg section
   echo "
-  <div class='scrolling window bit'>
+  <div class='scrolling-window-bit bg-dark'>
 
   
+  </div>";
+  //message object
+  echo "
+  <div class='msg-body'>
+    <div class='username'>
+      <div class='icon'></div>
+      <div class='name txt-light'></div>
+    </div>
+    <div class='msg-content txt-light'></div>
   </div>";
   //store each message in the database, storing the datetime, msg, userid and diplaying 
   // them in order of datetime, pulling username+pic from other table.
