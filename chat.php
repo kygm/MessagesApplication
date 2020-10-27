@@ -14,9 +14,13 @@ require('./dbconnect.php');
   //can you see me kenny
   //yeah
   //should we use a profile pic?
+  
   echo '
 <div class="input-group mb-3">
   <div class="custom-file">
+  <!--//instead of using a file input diectly on the message thing, lets use a butoon
+  //that onPress, it opens up a little window like in discord, and the file input is in
+  //that window, which upon opening, it automatically clicks-->
     <input type="file" class=" btn-secondary" id="inputGroupFile01" >
     <label for="inputGroupFile01">++</label>
   </div>
