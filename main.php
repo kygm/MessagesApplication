@@ -56,7 +56,7 @@ function DO_MAIN($dbh)
 	"
 		
 		<form method='post' action='admin_users.php'>
-			<button type='submit'>Click here to work with users</button>
+			<button type='submit'class='btn-secondary'>Click here to work with users</button>
 		</form>
 		<form method='post' action='chat.php'>
 			<button type='submit'>Click here to chat</button>
@@ -69,7 +69,7 @@ function DO_MAIN($dbh)
 		echo
 		"
 		<form method='post' action='chat.php'>
-			<button type='submit'>Click here to view inventory</button>
+			<button type='submit' class='btn-secondary'>Click here to view inventory</button>
 		</form>";
 	}
 	//echo $user_id;
