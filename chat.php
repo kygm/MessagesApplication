@@ -21,18 +21,20 @@ require('./dbconnect.php');
   <!--//instead of using a file input diectly on the message thing, lets use a butoon
   //that onPress, it opens up a little window like in discord, and the file input is in
   //that window, which upon opening, it automatically clicks-->
-    <input type="file" class=" btn-secondary" id="inputGroupFile01" >
-    <label for="inputGroupFile01">++</label>
   </div>
   <div class="chatInput">
+    <button type="button" class="btn-secondary" action="getFile">
     <input type="text" placeholder="message ">
   </div>
   <div class="chatSend">
     <button type="button" class="btn btn-danger" action="file?"text="Send">
   </div>
-</div>';//chat input
+</div>
+<input type="file" class=" btn-secondary" id="inputGroupFile01" >
+    <label for="inputGroupFile01">++</label>';//chat input
 //function deterniming if its a file, add msg after file popup like discord?
 function fileQuery() {
+  
   //after function (or in function?)
   //post msg to chat
   //im assuming youre holding the messages in the database and displaying them all in a scrolling window.
