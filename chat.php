@@ -33,6 +33,11 @@ require('./dbconnect.php');
 <input type="file" class=" btn-secondary" id="inputGroupFile01" >
     <label for="inputGroupFile01">++</label>';//chat input
 //function deterniming if its a file, add msg after file popup like discord?
+function getFile(){
+  //open one of those warning boxes or whatever and style it, upon opening
+  // autoclick the file browse button.
+
+}
 function fileQuery() {
   
   //after function (or in function?)
