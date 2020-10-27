@@ -14,18 +14,19 @@ require('./dbconnect.php');
   //can you see me kenny
   //yeah
   //should we use a profile pic?
-  echo //<div class="input-group mb-3">
-  '<div class="custom-file">
+  echo '
+<div class="input-group mb-3">
+  
     <input type="file" class=" btn-secondary" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
     <label class="custom-file-label" for="inputGroupFile01">++</label>
-  </div>
+  
   <div class="chatInput">
     <input type="text" placeholder="message ">
   </div>
   <div class="chatSend">
     <button type="button" class="btn btn-danger" action="file?"text="Send">
   </div>
-';//chat input
+</div>';//chat input
 //function deterniming if its a file, add msg after file popup like discord?
 function fileQuery() {
   //after function (or in function?)
