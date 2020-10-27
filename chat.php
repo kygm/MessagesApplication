@@ -18,13 +18,13 @@ require('./dbconnect.php');
   echo '
 <div class="input-group mb-3">
   <div class="custom-file">
-  <button type="button" class="btn btn-secondary"action="getFile">+</button>
+  <button type="button" class="btn btn-secondary-50"action="getFile">+</button>
   <!--//instead of using a file input diectly on the message thing, lets use a butoon
   //that onPress, it opens up a little window like in discord, and the file input is in
   //that window, which upon opening, it automatically clicks-->
   </div>
   <div class="chatInput">
-    <input type="text"class="form-control text-light" placeholder="message ">
+    <input type="text"class="form-control text-light bg-secondary" placeholder="message ">
   </div>
   <div class="chatSend">
     <button type="button" class="btn btn-danger" action="file?">Send</button>
