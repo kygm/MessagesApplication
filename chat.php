@@ -24,7 +24,7 @@ require('./dbconnect.php');
   //that window, which upon opening, it automatically clicks-->
   </div>
   <div class="chatInput">
-    <input type="text"class="form-control" placeholder="message ">
+    <input type="text"class="form-control text-light" placeholder="message ">
   </div>
   <div class="chatSend">
     <button type="button" class="btn btn-danger" action="file?">Send</button>
