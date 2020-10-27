@@ -15,6 +15,21 @@ require('./dbconnect.php');
   //yeah
   //should we use a profile pic?
   
+  //msg section
+  echo "
+  <div class='scrolling window bit'>
+
+  
+  </div>";
+  //store each message in the database, storing the datetime, msg, userid and diplaying 
+  // them in order of datetime, pulling username+pic from other table.
+  // also displaying datetime including time to minute, unless previous msg posted
+  // by same user within 2 minutes, then only give 1 datetime/username/etc.
+  // give option to rightclick? to delete/edit a users own msg, unless admin can delete any
+  // post img files showing the img?
+  // autodelete msgs at 6mo age unless msg is pinned or something?
+
+  //input section
   echo '
 <div class="input-group mb-3">
   <div class="custom-file">
