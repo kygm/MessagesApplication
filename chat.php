@@ -17,14 +17,14 @@ require('./dbconnect.php');
   echo '
 <div class="input-group mb-3">
   <div class="custom-file">
-    <input type="file" class="custom-file-input btn-secondary" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+    <input type="file" class=" btn-secondary" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
     <label class="custom-file-label" for="inputGroupFile01">++</label>
   </div>
   <div class="chatInput">
     <input type="text" placeholder="message ">
   </div>
   <div class="chatSend">
-    <button type="button" class="btn btn-danger" action="file?">
+    <button type="button" class="btn btn-danger" action="file?"text="Send">
   </div>
 </div>';//chat input
 //function deterniming if its a file, add msg after file popup like discord?
