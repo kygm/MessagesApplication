@@ -1,20 +1,7 @@
 <?php
 require('./dbconnect.php');
   require('./header.html');
-  echo "<p>Under construction...</p>";
-  echo "<p>This page will contain the actual chat</p> 
-  <p>application and friends list</p>";
-  echo "git test";
-  //new test
-//Kenny test
-//hey
-  //newer test
-  //bitch
 
-  //can you see me kenny
-  //yeah
-  //should we use a profile pic?
-  
   //msg section
   echo "
   <div class='scrolling-window-bit bg-dark'>
