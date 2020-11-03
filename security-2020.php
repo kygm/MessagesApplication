@@ -94,41 +94,49 @@ function DO_PASSWORD($dbh){
 function DO_LOGIN($dbh,$message){ 
 	//goal: center the login info, make it look much better.
 	//do something that will put the table im making in the center of the page.
-	//msg will span
+	//make table cover whole screen
 	echo"
-	<table class='loginForm '>
-		<tr><th colspan='10' class='text-center'>$message</th></tr>
-			<form action ='?action=submit' method='post'>
-		<tr>
-			<th class='center'>*</th>
-			<th colspan='4'>Username</th>
-			<th colspan='4'><input type='text' name='username'/></th>
-			<th class='center'>*</th>
+	<table class='table table-dark table-bordered'>
+		<tr height='33%'><td width='33%'></td><td width='33%'></td><td width='33%'></td></tr>
+		<tr height='33%'><td></td>
+			<td>
+				<table class='table loginForm table-dark'>
+					<tr><th colspan='10' class='text-center'>$message</th></tr>
+						<form action ='?action=submit' method='post'>
+					<tr>
+						<th class='center'>*</th>
+						<th colspan='4'>Username</th>
+						<th colspan='4'><input type='text'class='bg-secondary' name='username'/></th>
+						<th class='center'>*</th>
+					</tr>
+					<tr>
+						<th class='center'>*</th>
+						<th colspan='4'>Password</th>
+						<th colspan='4'><input type='password'class='bg-secondary' name='password' /></th>
+						<th class='center'>*</th>
+					</tr>
+					<tr>
+						<td class='center'>*</td>
+						<td colspan='8' class='center'><input type ='submit'class='btn btn-success btn-block' value ='Submit' /></td>
+						<td class='center'>*</td>
+					</tr>
+					<tr>
+						<td class='center'>*</td>
+						<td colspan=4 class='align-top'><form action ='?action=new' method='post'>
+							<input type ='submit' class='btn btn-dark text-info btn-block font-weight-bold' value ='New Account' />
+						</td></form>
+						<td colspan=4 class='align-top text-center font-weight-bold'><form action ='?action=forgot' method='post'>
+							<input type ='submit' class='btn btn-dark text-danger btn-block' value='Forgot Password' />
+						</td></form>
+						<td class='center'>*</td>
+					</tr>
+				</table>
+			</td><td></td>
 		</tr>
-		<tr>
-			<th class='center'>*</th>
-			<th colspan='4'>Password</th>
-			<th colspan='4'><input type='password' name='password' /></th>
-			<th class='center'>*</th>
-		</tr>
-		<tr>
-			<td class='center'>*</td>
-			<td colspan='8' class='center'><input type ='submit'class='btn btn-success btn-block' value ='Submit' /></td>
-			<td class='center'>*</td>
-		</tr>
-		<tr>
-			<td class='center'>*</td>
-			<td colspan=4><form action ='?action=new' method='post'>
-				<input type ='submit' class='btn btn-dark text-info btn-block'value ='New Account' />
-			</td></form>
-			<td colspan=4><form action ='?action=forgot' method='post'>
-				<input type ='submit' class='btn btn-dark text-danger btn-block'value ='Forgot Password' />
-			</td></form>
-			<td class='center'>*</td>
-		</tr>
+		<tr height='33%'><td></td><td></td><td></td></tr>
 	</table>
 	";
-	echo "<strong>QuietMessenger</strong>";
+	//echo "<strong>QuietMessenger</strong>";
 
 }
 function ADD_USER($dbh)
