@@ -94,8 +94,29 @@ function DO_PASSWORD($dbh){
 function DO_LOGIN($dbh,$message){ 
 	//goal: center the login info, make it look much better.
 	//do something that will put the table im making in the center of the page.
+	//msg will span
 	echo"
-	<
+	<table class='loginForm '>
+		<tr><th colspan='10' class='center'>"+$message+"</th></tr>
+			<form action ='?action=submit' method='post'>
+		<tr>
+			<th class='center'>*</th>
+			<th colspan='4'>Username</th>
+			<th colspan='4'><input type='text' name='username'/></th>
+			<th class='center'>*</th>
+		</tr>
+		<tr>
+			<th class='center'>*</th>
+			<th colspan='4'>Password</th>
+			<th colspan='4'><input type='password' name='password' /></th>
+			<th class='center'>*</th>
+		</tr>
+		<tr>
+			<td class='center'>*</td>
+			<td colspan='8'><input type ='submit' value ='Submit' /></td>
+			<td class='center'>*</td>
+		</tr>
+	</table>
 	";
 	echo "<h3>$message</h3>";
 	$bgcolor ='yellow';	
@@ -105,11 +126,11 @@ function DO_LOGIN($dbh,$message){
 	<th bgcolor =$bgcolor>Password</th>
 	</tr>";
 	echo '<tr>';
-	echo "<form action ='?action=submit' method='post'>";
-	echo "<td><input type='text' name='username'/></td>";
-	echo "<td><input type='password' name='password' /></td>";	
-	echo "<td><input type ='submit' value ='Submit' /></td>";
-	echo "</form>";
+	// echo "<form action ='?action=submit' method='post'>";
+	// echo "<td><input type='text' name='username'/></td>";
+	// echo "<td><input type='password' name='password' /></td>";	
+	// echo "<td><input type ='submit' value ='Submit' /></td>";
+	// echo "</form>";
 	echo "</tr><tr>";
 
 	echo "<form action ='?action=new' method='post'>";
