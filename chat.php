@@ -111,7 +111,7 @@ function ADD_FRIENDS()
   //to add friends, or by first and last name.
   //this will be treated as a COMPONENT and will be
   //added to the top of the website OR as a dialog box.
-// im thinking of using a navbar that slides out toward the right with a list of friends and settings at the bottom. - KR
+// im thinking of using a navbar that slides out toward the right with a list of friends/chats and settings at the bottom. - KR
 //searchbar to add friends at top of navbar, settings at bottom - KR
   echo
   "
