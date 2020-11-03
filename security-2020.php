@@ -1,40 +1,25 @@
 <?php
 
   require("dbConnect.php");
-
+  require("header.html");
 
 $action =NULL;
 
 
 
-if (isset($_GET['action']))
-{
-		$action = $_GET['action'];	
-}
+if (isset($_GET['action'])){	$action = $_GET['action'];	}
 
-if ($action == 'submit')
-{ 
+if ($action == 'submit'){ 
 	DO_PASSWORD($dbh);
-}
-else if ($action == 'new')
-{ 
-
+}else if ($action == 'new'){ 
 	NEW_LOGIN($dbh, 'Please create a new account');	
-}
-else if ($action == 'add_user')
-{ 
+}else if ($action == 'add_user'){ 
 	ADD_USER($dbh);	
-}
-else if ($action == 'forgot')
-{ 
+}else if ($action == 'forgot'){ 
 	FORGOT_USER($dbh);
-}
-else if ($action == 'forgot_data')
-{
+}else if ($action == 'forgot_data'){
 	FORGOT_DATA($dbh);
-}
-else 
-{	
+}else {	
 	DO_LOGIN($dbh,'Please Login');
 }
 function DO_PASSWORD($dbh){	
@@ -51,25 +36,19 @@ function DO_PASSWORD($dbh){
 	$sth->execute();
 	$result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-	
 	$good_password =0;
 	$user_id =NULL;
 	$hash_password =NULL;
 	foreach($result as $row){
-	
 		$user_id = $row['UserID'];
 		$hash_password = $row['password'];
 		$blocked = $row['blocked'];
-		
 	}
 	
 	if (password_verify($password, $hash_password)){
-	
 		$good_password = 1;
-		
-	}else
-	{
-	echo "<h3> password not valid</h3>";
+	}else{
+		echo "<h3> password not valid</h3>";
 	}
 	
 	if ($good_password)
@@ -81,18 +60,14 @@ function DO_PASSWORD($dbh){
 	//			echo "<h3> i want to DESTROY here";
 				session_destroy();
 				session_start();
-			}
-			else
-			{
+			}else{
 				session_start();
 			}
-			if($blocked == 1)
-			{
+			if($blocked == 1){
 			//	echo'test';
 				echo '<META HTTP-EQUIV="Refresh" Content="0; URL=youreblocked.php">';
 			}
-			if($blocked == 0)
-			{
+			if($blocked == 0){
 				$_SESSION['user_id'] =$user_id;
 				
 				$sql ="SELECT logged_in FROM Security WHERE ";
@@ -101,8 +76,7 @@ function DO_PASSWORD($dbh){
 				$sth->bindParam(':id', $user_id);
 				$sth->execute();
 				$result = $sth->fetchAll(PDO::FETCH_ASSOC);
-				foreach($result as $row)
-				{
+				foreach($result as $row){
 					$logged_in = $row['logged_in'];
 				}
 				$logged_in++;
@@ -113,15 +87,16 @@ function DO_PASSWORD($dbh){
 			}
 		
 			
-	} else
-	{
-		
+	} else{
 		DO_LOGIN($dbh, 'Invalid Login, please try again');
 	}
 }	
-function DO_LOGIN($dbh,$message)
-{ 
-
+function DO_LOGIN($dbh,$message){ 
+	//goal: center the login info, make it look much better.
+	//do something that will put the table im making in the center of the page.
+	echo"
+	<
+	";
 	echo "<h3>$message</h3>";
 	$bgcolor ='yellow';	
 	echo "<table border =0>";
@@ -170,37 +145,26 @@ function ADD_USER($dbh)
 	//echo showQuery($sql,$test_array);
 	$used =0;
 	
-	foreach($result as $row)
-	{
-		$used = $row['used'];
-		
+	foreach($result as $row){
+		$used = $row['used'];	
 	}
-	if ($used)
-	{
+	if ($used){
 		$message ='Username already in use, try a different username';
 		NEW_LOGIN($dbh, $message);
-	}
-	else if ($password != $password2)
-	{
+	}else if ($password != $password2){
 		$message ='Passwords do not match, try again';
 		NEW_LOGIN($dbh, $message);
-	}
-	else if (strlen($password) < 6 )
-	{
+	}else if (strlen($password) < 6 ){
 		$message ='Password is too short, passwords need to be at least 6 characters';
 		NEW_LOGIN($dbh, $message);	
-	}
-	else if((preg_match('/[A-Z]/', $password)) == false)
-	{
+	}else if((preg_match('/[A-Z]/', $password)) == false){
 		$message = 'Password does not contain an uppercase. Please include an uppercase letter';
 		NEW_LOGIN($dbh, $message);
-	}
-	else if((preg_match('/[A-Z]/', $password)) == false)
+	}else if((preg_match('/[A-Z]/', $password)) == false)
 	{
 		$message = 'Password does not contain a lowercase. Please include a lowercase letter';
 		NEW_LOGIN($dbh, $message);
-	}
-	else 
+	}else 
 	{
 
 		$salted_password = password_hash($password, PASSWORD_DEFAULT);
@@ -242,9 +206,7 @@ function ADD_USER($dbh)
 			echo "Login Created and user logged in<p>";
 			echo "<a href=main.php>Click here to continue</a><p>";
 	
-		} 
-		else 
-		{
+		} else {
 			$msg = 'Error adding user';
 			NEW_LOGIN($dbh,$msg);
 		}
@@ -303,9 +265,7 @@ function FORGOT_DATA($dbh)
 			//when correct forgot_code is entered.
 			$name = 'uid';
 			setcookie($name, $user_id);
-		}
-		else
-		{
+		}else{
 			$msg ="Not found in system";
 			DO_LOGIN($dbh,$msg);
 		}
@@ -342,8 +302,8 @@ function showQuery($query, $params){
   # build a regular expression for each parameter
 	foreach ($params as $key => $value) {
 		if (is_string($key)) {
-      $keys[] = '/:' . $key . '/';
-    } else {
+      		$keys[] = '/:' . $key . '/';
+    	} else {
 			$keys[] = '/[?]/';
 		}
 		if (is_numeric($value)) {
