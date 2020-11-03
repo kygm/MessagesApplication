@@ -117,7 +117,7 @@ function DO_LOGIN($dbh,$message){
 					</tr>
 					<tr>
 						<td class='center text-dark'>*</td>
-						<td colspan='8' class='center'><input type ='submit'class='btn btn-success btn-block' value ='Submit' /></td>
+						<td colspan='8' class='center'><input type ='submit'class='btn btn-success btn-block' value ='Login' /></td>
 						<td class='center text-dark'>*</td>
 					</tr>
 					<tr>
@@ -210,19 +210,15 @@ function ADD_USER($dbh)
 		
 		$sth->execute();
 		
-
 		$user_id = $dbh->lastInsertId();
 
 		if ($user_id > 0)
 		{
-
 			session_start();
 			$_SESSION['user_id'] =$user_id;
-	
 			echo "Login Created and user logged in<p>";
 			echo "<a href=main.php>Click here to continue</a><p>";
-	
-		} else {
+			} else {
 			$msg = 'Error adding user';
 			NEW_LOGIN($dbh,$msg);
 		}
@@ -231,27 +227,40 @@ function ADD_USER($dbh)
 
 function FORGOT_USER($dbh)
 {
-
-	
-	$bgcolor ='yellow';	
-	echo "<table border =0>";
-	echo '<tr><th colspan=2>Enter information to reset password</th></tr>';
-	echo "<tr>
-	<th bgcolor =$bgcolor>Username</th>
-	<th bgcolor =$bgcolor>Email</th>
-	</tr><tr>";
-	
-	echo "<form action ='?action=forgot_data' method='post'>";
-	echo "<td><input type='text' name='forgot_username' /></td>";
-	echo "<td><input type='test' name='forgot_email' /></td>";	
-	echo "<td><input type ='submit' value ='Submit' /></td>";
-	echo "</form>";
-	echo "</tr><tr>";
-
+	echo"<body class='bg-dark'>
+	<table class='table-dark' width=100% height=100%>
+		<tr height='15%'><td width='33%'></td><td width='33%'></td><td width='33%'></td></tr>
+		<tr height='33%'><td></td>
+			<td>
+				<table class='table forgotForm table-dark' border='0'>
+					<tr><th colspan='10' class='text-center'>Enter information for password reset</th></tr>
+						<form action ='?action=forgot_data' method='post'>
+					<tr>
+						<th class='center text-dark'>*</th>
+						<th colspan='4'>Username</th>
+						<th colspan='4'><input type='text'class='bg-secondary' name='forgot_username'/></th>
+						<th class='center text-dark'>*</th>
+					</tr>
+					<tr>
+						<th class='center text-dark'>*</th>
+						<th colspan='4'>Email</th>
+						<th colspan='4'><input type='text' class='bg-secondary' name='forgot_email' /></th>
+						<th class='center text-dark'>*</th>
+					</tr>
+					<tr>
+						<td class='center text-dark'>*</td>
+						<td colspan='8' class='center'><input type ='submit'class='btn btn-success btn-block' value ='Submit' /></td>
+						<td class='center text-dark'>*</td>
+					</tr>
+				</table>
+			</td><td></td>
+		</tr>
+		<tr height='33%'><td></td><td></td><td></td></tr>
+	</table>
+	";
 }
 function FORGOT_DATA($dbh)
 {
-	
 	$forgot_username = $_POST['forgot_username'];	
 	$forgot_email = $_POST['forgot_email'];
 	$user_id =NULL;
