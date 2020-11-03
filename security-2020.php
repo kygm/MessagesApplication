@@ -97,7 +97,7 @@ function DO_LOGIN($dbh,$message){
 	//msg will span
 	echo"
 	<table class='loginForm '>
-		<tr><th colspan='10' class='center'>"+$message+"</th></tr>
+		<tr><th colspan='10' class='text-center'>$message</th></tr>
 			<form action ='?action=submit' method='post'>
 		<tr>
 			<th class='center'>*</th>
@@ -113,34 +113,21 @@ function DO_LOGIN($dbh,$message){
 		</tr>
 		<tr>
 			<td class='center'>*</td>
-			<td colspan='8'><input type ='submit' value ='Submit' /></td>
+			<td colspan='8' class='center'><input type ='submit'class='btn btn-success btn-block' value ='Submit' /></td>
+			<td class='center'>*</td>
+		</tr>
+		<tr>
+			<td class='center'>*</td>
+			<td colspan=4><form action ='?action=new' method='post'>
+				<input type ='submit' class='btn btn-dark text-primary btn-block'value ='New Account' />
+			</td></form>
+			<td colspan=4><form action ='?action=forgot' method='post'>
+				<input type ='submit' class='btn btn-dark text-danger btn-block'value ='Forgot Password' />
+			</td></form>
 			<td class='center'>*</td>
 		</tr>
 	</table>
 	";
-	echo "<h3>$message</h3>";
-	$bgcolor ='yellow';	
-	echo "<table border =0>";
-	echo "<tr>
-	<th bgcolor =$bgcolor>Username</th>
-	<th bgcolor =$bgcolor>Password</th>
-	</tr>";
-	echo '<tr>';
-	// echo "<form action ='?action=submit' method='post'>";
-	// echo "<td><input type='text' name='username'/></td>";
-	// echo "<td><input type='password' name='password' /></td>";	
-	// echo "<td><input type ='submit' value ='Submit' /></td>";
-	// echo "</form>";
-	echo "</tr><tr>";
-
-	echo "<form action ='?action=new' method='post'>";
-	echo "<td><input type ='submit' value ='Setup New Account' /></td>";
-	echo "</form>";
-	echo "</tr><tr>";
-	echo "<form action ='?action=forgot' method='post'>";
-	echo "<td><input type ='submit' value ='Forgot Password' /></td>";
-	echo "</form>";
-	echo "</table>";
 	echo "<strong>QuietMessenger</strong>";
 
 }
