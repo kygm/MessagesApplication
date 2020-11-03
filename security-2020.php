@@ -125,8 +125,8 @@ function DO_LOGIN($dbh,$message){
 						<td colspan=4 class='align-top'><form action ='?action=new' method='post'>
 							<input type ='submit' class='btn btn-dark text-info btn-block font-weight-bold' value ='New Account' />
 						</td></form>
-						<td colspan=4 class='align-top text-center font-weight-bold'><form action ='?action=forgot' method='post'>
-							<input type ='submit' class='btn btn-dark text-danger btn-block' value='Forgot Password' />
+						<td colspan=4 class='align-top text-center'><form action ='?action=forgot' method='post'>
+							<input type ='submit' class='btn btn-dark text-danger btn-block font-weight-bold' value='Forgot Password' />
 						</td></form>
 						<td class='center text-dark'>*</td>
 					</tr>
