@@ -9,7 +9,8 @@ if (!defined('PDO::ATTR_DRIVER_NAME')) {
 	echo 'PDO is available<br/>';
 	}
 */
-
+	//how to git pull
+	// git pull git@github.com:kygm/MessagesApplication.git
  try {
 		 $dsn = 'mysql:host=localhost;dbname=message_application';
 		 $username = 'root';
